@@ -1,11 +1,17 @@
+// src/components/Button.js
 import React from 'react';
+import { Button as AntButton } from 'antd';
 
-const Button=({label,onClick})=>{
-    return(
-        <button onClick={()=>onClick(label)}>
-            {label}
-        </button>
-    )
-}
+const CalcButton = ({ label, onClick }) => {
+  return (
+    <AntButton
+      type="primary"
+      style={{ flex: 1, margin: '5px', height: '60px' }}
+      onClick={() => onClick(label)}
+    >
+      {label}
+    </AntButton>
+  );
+};
 
-export default Button;
+export default CalcButton;

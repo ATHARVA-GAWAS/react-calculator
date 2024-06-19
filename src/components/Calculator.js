@@ -1,6 +1,7 @@
 // src/components/Calculator.js
 import React, { useState } from 'react';
-import Button from './Button';
+import { Row, Col } from 'antd';
+import CalcButton from './Button';
 import Display from './Display';
 
 const Calculator = () => {
@@ -26,14 +27,18 @@ const Calculator = () => {
     }
   };
 
+  const buttonLabels = ['7', '8', '9', '/', '4', '5', '6', '*', '1', '2', '3', '-', '0', '.', '=', '+', 'C'];
+
   return (
-    <div className="calculator">
+    <div style={{ width: '400px', margin: '50px auto' }}>
       <Display value={input || '0'} />
-      <div className="buttons">
-        {['7', '8', '9', '/', '4', '5', '6', '*', '1', '2', '3', '-', '0', '.', '=', '+', 'C'].map((label) => (
-          <Button key={label} label={label} onClick={handleClick} />
+      <Row gutter={[5, 5]}>
+        {buttonLabels.map((label) => (
+          <Col span={6} key={label}>
+            <CalcButton label={label} onClick={handleClick} />
+          </Col>
         ))}
-      </div>
+      </Row>
     </div>
   );
 };

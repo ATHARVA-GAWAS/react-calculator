@@ -1,5 +1,7 @@
+// src/App.js
 import React from 'react';
 import Calculator from './components/Calculator';
+import 'antd/dist/reset.css';
 import './App.css';
 
 function App() {
@@ -11,3 +13,4 @@ function App() {
 }
 
 export default App;
+
